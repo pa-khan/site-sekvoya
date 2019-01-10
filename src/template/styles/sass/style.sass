@@ -2,13 +2,15 @@
 @import sprite.sass
 @import fonts.sass
 @import grid.sass
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')
 @import '../../libs/fancybox/dist/jquery.fancybox.css'
 
 
 /* Global settings */
-$font-size: 16px
-$font-family-1: 'Tahoma', sans-serif
-$color-1: #000
+$font-size: 13px
+$font-family-1: 'Open Sans', sans-serif
+$font-family-2: 'HelveticaNeueCyr', sans-serif
+$color-1: #4e4e4e
 
 
 *, :before, :after
@@ -61,21 +63,38 @@ input, textarea, button
 	position: relative
 	&__wrap
 		display: block
-		font-size: $font-size
-		font-family: $font-family-1
+		font-size: 14px
+		font-family: $font-family-2
 		background: white
 		width: 100%
+		height: 36px
+		border: 1px solid #d4d4d4
+		border-radius: 4px
+		padding: 0 15px
+		font-weight: 300
+		&::placeholder
+			opacity: 1
+			color: #4e4e4e
+
 
 
 .textarea
 	position: relative
 	&__wrap
 		display: block
-		font-size: $font-size
-		font-family: $font-family-1
+		font-size: 14px
+		font-family: $font-family-2
 		background: white
 		width: 100%
 		resize: none
+		border: 1px solid #d4d4d4
+		border-radius: 4px
+		padding: 15px
+		font-weight: 300
+		min-height: 100px
+		&::placeholder
+			opacity: 1
+			color: #4e4e4e
 
 .btn
 	position: relative
@@ -88,6 +107,29 @@ input, textarea, button
 	text-align: center
 	transition: .3s
 	background-color: transparent
+	text-transform: uppercase
+	color: #fff
+	&_small
+		height: 24px
+		font-size: 10px
+		border-radius: 2px
+	&_normal
+		height: 41px
+		font-size: 15px
+		font-family: $font-family-2
+		border-radius: 4px
+	&_yellow
+		background-color: #dc9f2e
+		&:hover
+			background-color: #246c8f
+	&_blue
+		background-color: #246c8f
+		&:hover
+			background-color: #dc9f2e
+		
+	.icon
+		margin-right: 15px
+
 
 .input input, .textarea textarea
 	transition: .3s
@@ -95,6 +137,10 @@ input, textarea, button
 input, .btn, .slick-slide, textarea
 	outline: none !important
 
+
+.icon
+	display: inline-block
+	vertical-align: middle
 
 .tal
 	text-align: left
@@ -115,8 +161,594 @@ input, .btn, .slick-slide, textarea
 	// overflow-x: hidden
 
 
+.header
+	border-top: 4px solid #f1ba4f
+	padding-top: 20px
+	padding-bottom: 20px
+	color: #fff
+	background-color: #0d6994
+	a
+		color: #fff
+	&_main
+		background: url('../../img/bg/header.png') no-repeat center top
+		background-size: cover
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			bottom: -21px
+			left: 50%
+			display: inline-block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 21px 63.5px 0 63.5px
+			border-color: #126186 transparent transparent transparent
+			transform: translateX(-50%)
+
+
+.logo
+	display: inline-flex
+	align-items: center
+	&__icon
+		width: 88px
+		margin-right: 8px
+	&__text
+		
+	&__title
+		font-size: 32px
+		font-weight: 700
+		color: #ffbf14
+		margin-bottom: 7px
+
+	&__desc
+		font-size: 16px
+		text-transform: uppercase
+		padding-left: 10px
+
+
+.hum
+	display: none
+
+.nav
+	padding-bottom: 10px
+	border-bottom: 2px solid #014768
+	text-transform: uppercase
+	margin-top: 25px
+	ul
+		display: flex
+		+ ul
+			display: none
+	li
+		font-size: 16px
+		line-height: 16px
+		padding-left: 35px
+		padding-right: 35px
+		border-right: 1px solid #fff
+		&:first-of-type
+			padding-left: 20px
+		&:last-of-type
+			border-right: none
+		&.selected
+		 a
+		 	&:after
+		 		opacity: 1
+		 
+	a
+		display: block
+		position: relative
+		&:after
+			content: ''
+			background-color: #dc9f2e
+			position: absolute
+			left: 0
+			right: 0
+			height: 2px
+			bottom: -13px
+			opacity: 0
+			transition: .3s
+		&:hover
+			&:after
+				opacity: 1
 
 
 
+.catalog
+	margin-top: 20px
+	&__list
+		margin-left: -2px
+		margin-right: -2px
+	&__item
+		width: calc(100% / 5 - 4px)
+		background-color: rgba(255,255,255,.12)
+		margin-left: 2px
+		margin-right: 2px
+		margin-bottom: 4px
+		display: flex
+		flex-direction: column
+		text-align: center
+		position: relative
+		padding-left: 5px
+		padding-right: 5px
+		height: 220px
+		padding-top: 31px
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border: 2px solid #f1ba4f
+			opacity: 0
+			transition: .3s
+		&:hover
+			&:before
+				opacity: 1
+			.catalog
+				&__title
+					color: #f1ba4f
+
+	&__title
+		font-size: 14px
+		text-transform: uppercase
+		transition: .3s
+		min-height: 60px
+		margin-bottom: 0px
+
+	&__img
+		height: 90px
+		display: flex
+		justify-content: center
+		align-items: center
+		img
+			margin-left: auto
+			margin-right: auto
+
+		
+.page
+	padding-top: 30px
+
+.breadcrumbs
+	// display: none
+	margin-bottom: 27px
+	li
+		font-size: 15px
+		color: #2f7ea3
+		&:after
+			color: #020202
+			content: '|'
+			margin-left: 12px
+			margin-right: 12px
+		&:last-of-type
+			&:after
+				display: none
+	a
+		color: #020202
+		&:hover
+			border-color: #020202
+.section
+	width: calc(100% - 294px - 6px)
+	+ .aside
+		margin-left: auto
+	&_padding
+		padding-left: 18px
+
+.aside
+	width: 294px
+
+
+.consult
+	margin-bottom: 15px
+	&__head
+		color: #fff
+		background-color: #dc9f2e
+		text-align: center
+		border-radius: 5px 5px 0 0
+		line-height: 16px
+		padding: 10px
+
+	&__title
+		font-size: 16px
+		font-weight: 400
+		text-transform: uppercase
+		margin-bottom: 3px
+
+	&__desc
+		font-size: 12px
+
+
+	&__body
+		border: 1px solid #d4d4d4
+		border-top: none
+		background-color: #f3f3f3
+		padding: 23px 23px 30px
+	
+	&__input
+		margin-bottom: 10px
+
+	&__textarea
+		.textarea__wrap
+			height: 200px
+
+	&__text
+		line-height: 18px
+		text-align: center
+		font-family: $font-family-2
+		margin-top: 21px
+		margin-bottom: 16px
+
+	&__
+		
+		
+	&__btn
+		width: 220px
+		margin-left: 8px
+		margin-right: 8px
+
+
+.news
+	&__title
+		font-size: 22px
+		font-weight: 700
+		text-transform: uppercase
+		color: #126186
+		font-family: $font-family-2
+		text-align: center
+		margin-bottom: 19px
+	&__item
+		border: 1px solid #d4d4d4
+		background-color: #f3f3f3
+		margin-bottom: 24px
+		padding: 7px 4px 15px  15px
+		display: flex
+		flex-wrap: wrap
+		&:last-of-type
+			margin-bottom: 0
+	&__img
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		width: 137px
+		height: 127px
+		margin-top: 8px
+	&__content
+		width: calc(100% - 137px)
+		padding-left: 10px
+	&__subtitle
+		font-size: 18px
+		font-weight: 700
+		color: #0369a8
+		a
+			color: #0369a8
+			&:hover
+				border-color: #0369a8
+
+	&__date
+		font-size: 12px
+		color: #b0b0b0
+		border-bottom: 1px solid #b0b0b0
+		padding-bottom: 8px
+
+	&__text
+		
+		padding-top: 8px
+		line-height: 18px
+		font-family: $font-family-2
+		max-width: 540px
+		
+			
+	&__btn
+		width: 105px
+		margin-left: auto
+		margin-right: 10px
+		
+	&_block
+		.news
+			&__title
+				min-height: 55px
+				display: flex
+				flex-direction: column
+				align-items: center
+				justify-content: center
+				text-align: center
+				background-color: #126186
+				border-radius: 4px 4px 0 0
+				color: #fff
+				font-size: 16px
+				font-family: $font-family-1
+				font-weight: 400
+				margin-bottom: 10px
+			&__item
+				background: none
+				border: none
+				padding: 0
+				position: relative
+				margin-bottom: 40px
+				&:last-of-type
+					margin-bottom: 0
+			&__content
+				width: 100%
+				padding-left: 0
+			&__head
+				display: flex
+				flex-wrap: wrap
+				align-items: center
+				margin-bottom: 12px
+			&__img
+				width: 66px
+				height: 66px
+
+			&__subtitle
+				font-size: 14px
+				line-height: 18px
+				width: calc(100% - 66px)
+				padding-left: 10px
+				font-weight: 300
+
+			&__text
+				color: #444647
+
+			&__btn
+				margin-right: 0
+				
+				
+.pagination
+	margin-top: 27px
+	ul
+		align-items: center
+		justify-content: center
+	li
+		font-size: 15px
+		&.selected
+			a
+				color: #fff
+				background-color: #dc9f2e
+		&.prev
+			margin-right: 10px
+		&.next
+			margin-left: 10px
+		&.prev, &.next
+			a
+				height: auto
+				border-radius: 0
+				padding-left: 0
+				padding-right: 0
+				color: #246c8f
+				border-color: #246c8f
+				&:hover
+					background: none
+					border-color: transparent
+				
+	a
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		text-align: center
+		height: 28px
+		padding-left: 9px
+		padding-right: 9px
+		border-radius: 4px
+		transition: .3s
+		&:hover
+			color: #fff
+			background-color: #dc9f2e
+
+
+
+.nav-block
+	&__item
+		height: 53px
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		background-color: #dc9f2e
+		border-radius: 3px
+		margin-bottom: 2px
+		padding: 5px 10px 5px 10px
+		&:last-of-type
+			margin-bottom: 0
+		&:hover
+			background-color: #2f7ea3
+	&__icon
+		width: 44px
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+	&__name
+		line-height: 13px
+		color: #fff
+		padding-left: 10px
+		width: calc(100% - 44px)
+
+
+.title
+	font-size: 20px
+	font-family: $font-family-2
+	text-transform: uppercase
+	border-bottom: 1px solid #eaeaea
+	padding-bottom: 13px
+	position: relative
+	margin-bottom: 15px
+	&:after
+		content: ''
+		width: 40px
+		height: 5px
+		background-color: #2f7ea3
+		position: absolute
+		bottom: 0
+		left: 0
+
+.text
+	font-family: $font-family-2
+	line-height: 18px
+	img
+		margin-bottom: 10px
+		&.left
+			float: left
+			margin-right: 20px
+		&.right
+			float: right
+			margin-left: 20px
+	h2
+		display: block
+		font-size: 18px
+		line-height: 20px
+		color: #333333
+		margin-bottom: 12px
+	h3
+		display: block
+		font-size: 16px
+		line-height: 18px
+		color: #333333
+	p
+		margin-bottom: 18px
+	a
+		color: #2f7ea3
+		border-color: #2f7ea3
+		&:hover
+			border-color: transparent
+
+	blockquote
+		padding: 40px 40px 18px 32px
+		border: 1px solid #d4d4d4
+		background-color: #f3f3f3
+		border-radius: 4px
+		position: relative
+		line-height: 18px
+		margin-bottom: 18px
+		&:before
+			content: ''
+			position: absolute
+			left: 17px
+			width: 3px
+			top: 20px
+			bottom: 20px
+			background-color: #2f7ea3
+		&:after
+			content: ''
+			@include sprite($quote)
+			position: absolute
+			top: 20px
+			left: 31px
+
+	table
+		width: 100%
+		border-collapse: collapse
+		text-align: center
+		margin-bottom: 18px
+		thead
+			td, th
+				font-weight: 400
+				color: #fff
+				background-color: #2f7ea3
+		td
+			padding: 7px 5px
+			border: 1px solid #dcd6d6
+	ul, ol
+		margin-bottom: 20px
+		li
+			width: 100%
+			position: relative
+			margin-bottom: 4px
+			&:last-of-type
+				margin-bottom: 0
+	ul
+		li
+			padding-left: 18px
+			&:before
+				content: ''
+				width: 9px
+				height: 9px
+				background-color: #2f7ea3
+				position: absolute
+				top: 4px
+				left: 0
+	ol
+		padding-left: 15px
+		li
+			display: list-item
+			list-style-type: desc
+
+
+.footer
+	margin-top: 50px
+
+.alfabet
+	color: #fff
+	background-color: #246c8f
+	position: relative
+	padding-top: 35px
+	padding-bottom: 8px
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 50%
+		display: inline-block
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 21px 63.5px 0 63.5px
+		border-color: #fff transparent transparent transparent
+		transform: translateX(-50%)
+	&__title
+		font-size: 24px
+		text-transform: uppercase
+		text-align: center
+		margin-bottom: 20px
+	&__grid
+		margin-left: -10px
+		margin-right: -10px
+	&__col
+		width: calc(100% / 6)
+		padding-left: 10px
+		padding-right: 10px
+		ul
+			margin-bottom: 25px
+		li
+			width: 100%
+			line-height: 15px
+			margin-bottom: 5px
+			&:last-of-type
+				margin-bottom: 0
+		a
+			color: #fff
+			border-color: #fff
+			&:hover
+				border-color: transparent
+
+
+.question
+	border-bottom: 8px solid #dc9f2e
+	position: fixed
+	bottom: 0
+	left: 0
+	right: 0
+	&__wrap
+		width: 845px
+		margin-left: auto
+		margin-right: auto
+		color: #fff
+		background-color: #dc9f2e
+		text-align: center
+		padding-top: 6px
+		border-radius: 6px 6px 0 0
+		cursor: pointer
+		span
+			font-size: 21px
+			padding-left: 4px
+		.icon, span
+			position: relative
+			top: 8px
+
+.copy
+	font-size: 0
+	height: 90px
+
+.color-blue
+	color: #3c92ca
 .hidden-lg
 	display: none

@@ -1,7 +1,23 @@
-@media screen and (max-width: 1199px)
+@media screen and (max-width: 1149px)
 	.case
 		width: 950px
 	
+	.nav
+		li
+			padding-left: 15px
+			padding-right: 15px
+			&:first-of-type
+				padding-left: 0
+
+	.consult
+		&__text
+			p
+				display: inline
+
+	
+
+
+
 	.hidden-lg
 		display: block
 	
@@ -14,6 +30,29 @@
 	.case
 		width: 750px
 
+	.catalog
+		&__list
+			justify-content: center
+		&__item
+			width: calc(100% / 4 - 4px)
+	.section
+		width: 100%
+		+ .aside
+			display: none
+
+	.alfabet
+		&__col
+			width: 33.333%
+
+	.aside
+		width: 100%
+		margin-bottom: 24px
+
+	.text
+
+
+	.section_padding
+		padding-left: 0
 	.hidden-md
 		display: block		
 	
@@ -25,6 +64,89 @@
 @media screen and (max-width: 767px)
 	.case
 		width: 100%
+	.logo
+		flex-wrap: wrap
+		width: 240px
+		margin-left: auto
+		margin-right: auto
+		&__icon
+			width: 64px
+		&__text
+			width: calc(100% - 64px - 8px)
+		&__title
+			font-size: 24px
+			margin-bottom: 0
+		&__desc
+			font-size: 14px
+			padding-left: 0
+			max-width: 200px
+
+	.nav
+		text-align: center
+		li
+			width: 100%
+			border-right: none
+			padding-left: 0
+			padding-right: 0
+			margin-bottom: 4px
+			&:last-of-type
+				margin-bottom: 0
+		a
+			&:after
+				display: none
+			
+			
+	.catalog
+		&__item
+			width: calc(50% - 4px)
+		&__title
+			font-size: 12px
+
+	.consult
+		&__body
+			padding: 15px
+		&__btn
+			margin-left: auto
+			margin-right: auto
+			&:first-of-type
+				margin-bottom: 5px
+	.news
+		&__item
+			margin-bottom: 10px
+			padding: 10px
+			&:last-of-type
+				margin-bottom: 0
+		&__img
+			margin-left: auto
+			margin-right: auto
+			margin-top: 0
+			width: 220px
+			height: 220px
+		&__content
+			width: 100%
+			margin-top: 12px
+		&__btn
+			margin-top: 5px
+	.footer
+		margin-top: 25px
+	.copy
+		font-size: 14px
+		text-align: center
+		height: auto
+		padding-top: 20px
+		padding-bottom: 20px
+		color: #fff
+		background-color: #dc9f2e
+	.alfabet
+		&__title
+			font-size: 20px
+			margin-bottom: 20px
+		&__col
+			width: 100%
+			ul
+				margin-bottom: 16px
+	.question
+		display: none
 
 	.hidden-sm
 		display: block

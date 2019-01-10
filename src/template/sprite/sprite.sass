@@ -17,8 +17,8 @@ $comment-quesiton-width: 29px
 $comment-quesiton-height: 27px
 $comment-quesiton-total-width: 107px
 $comment-quesiton-total-height: 70px
-$comment-quesiton-image: '../../img/sprite.png'
-$comment-quesiton: (78px, 0px, -78px, 0px, 29px, 27px, 107px, 70px, '../../img/sprite.png', 'comment-quesiton', )
+$comment-quesiton-image: 'sprite.png'
+$comment-quesiton: (78px, 0px, -78px, 0px, 29px, 27px, 107px, 70px, 'sprite.png', 'comment-quesiton', )
 $comment-question-big-name: 'comment-question-big'
 $comment-question-big-x: 0px
 $comment-question-big-y: 0px
@@ -28,8 +28,8 @@ $comment-question-big-width: 78px
 $comment-question-big-height: 58px
 $comment-question-big-total-width: 107px
 $comment-question-big-total-height: 70px
-$comment-question-big-image: '../../img/sprite.png'
-$comment-question-big: (0px, 0px, 0px, 0px, 78px, 58px, 107px, 70px, '../../img/sprite.png', 'comment-question-big', )
+$comment-question-big-image: 'sprite.png'
+$comment-question-big: (0px, 0px, 0px, 0px, 78px, 58px, 107px, 70px, 'sprite.png', 'comment-question-big', )
 $doc-name: 'doc'
 $doc-x: 78px
 $doc-y: 27px
@@ -39,8 +39,8 @@ $doc-width: 23px
 $doc-height: 27px
 $doc-total-width: 107px
 $doc-total-height: 70px
-$doc-image: '../../img/sprite.png'
-$doc: (78px, 27px, -78px, -27px, 23px, 27px, 107px, 70px, '../../img/sprite.png', 'doc', )
+$doc-image: 'sprite.png'
+$doc: (78px, 27px, -78px, -27px, 23px, 27px, 107px, 70px, 'sprite.png', 'doc', )
 $quote-name: 'quote'
 $quote-x: 0px
 $quote-y: 58px
@@ -50,13 +50,13 @@ $quote-width: 18px
 $quote-height: 12px
 $quote-total-width: 107px
 $quote-total-height: 70px
-$quote-image: '../../img/sprite.png'
-$quote: (0px, 58px, 0px, -58px, 18px, 12px, 107px, 70px, '../../img/sprite.png', 'quote', )
+$quote-image: 'sprite.png'
+$quote: (0px, 58px, 0px, -58px, 18px, 12px, 107px, 70px, 'sprite.png', 'quote', )
 $spritesheet-width: 107px
 $spritesheet-height: 70px
-$spritesheet-image: '../../img/sprite.png'
+$spritesheet-image: 'sprite.png'
 $spritesheet-sprites: ($comment-quesiton, $comment-question-big, $doc, $quote, )
-$spritesheet: (107px, 70px, '../../img/sprite.png', $spritesheet-sprites, )
+$spritesheet: (107px, 70px, 'sprite.png', $spritesheet-sprites, )
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -108,14 +108,3 @@ $spritesheet: (107px, 70px, '../../img/sprite.png', $spritesheet-sprites, )
     $sprite-name: nth($sprite, 10)
     .#{$sprite-name}
       @include sprite($sprite)
-
-
-.icon-
-  &comment-quesiton
-    @include sprite($comment-quesiton)
-  &comment-question-big
-    @include sprite($comment-question-big)
-  &doc
-    @include sprite($doc)
-  &quote
-    @include sprite($quote)

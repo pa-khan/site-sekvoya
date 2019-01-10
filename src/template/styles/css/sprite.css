@@ -1,0 +1,23 @@
+.icon-comment-quesiton {
+  background-image: url(../../img/sprite.png);
+  background-position: -78px 0px;
+  width: 29px;
+  height: 27px; }
+
+.icon-comment-question-big {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px 0px;
+  width: 78px;
+  height: 58px; }
+
+.icon-doc {
+  background-image: url(../../img/sprite.png);
+  background-position: -78px -27px;
+  width: 23px;
+  height: 27px; }
+
+.icon-quote {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px -58px;
+  width: 18px;
+  height: 12px; }
